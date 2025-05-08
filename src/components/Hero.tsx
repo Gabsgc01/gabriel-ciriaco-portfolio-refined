@@ -55,7 +55,7 @@ const Hero = () => {
             <div className="relative">
               <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-portfolio-primary shadow-lg">
                 <img 
-                  src="https://media.licdn.com/dms/image/v2/D4D03AQGbhjsNMhaiPg/profile-displayphoto-shrink_800_800/0/1746570239405?e=1752105600&v=beta&t=-kwSe_5Tfra3lbvd_MJeoijl5jsORJxzbLdH8T3nLhE" 
+                  src="https://media.licdn.com/dms/image/v2/D4D03AQGbhjsNMhaiPg/profile-displayphoto-shrink_800_800/B4DZanstqkG0Ac-/0/1746570239405?e=1752105600&v=beta&t=-kwSe_5Tfra3lbvd_MJeoijl5jsORJxzbLdH8T3nLhE" 
                   alt="Gabriel Ciriaco" 
                   className="w-full h-full object-cover"
                 />
