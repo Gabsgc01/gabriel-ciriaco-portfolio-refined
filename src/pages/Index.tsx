@@ -1,12 +1,56 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React, { useEffect } from 'react';
+import Header from '@/components/Header';
+import Hero from '@/components/Hero';
+import Formacao from '@/components/Formacao';
+import Sobre from '@/components/Sobre';
+import Experiencia from '@/components/Experiencia';
+import Cursos from '@/components/Cursos';
+import Contato from '@/components/Contato';
+import Footer from '@/components/Footer';
 
 const Index = () => {
+  // Scroll suave para links de navegação
+  useEffect(() => {
+    const handleSmoothScroll = (e: MouseEvent) => {
+      const target = e.target as HTMLAnchorElement;
+      const href = target.getAttribute('href');
+      
+      if (!href || !href.startsWith('#')) return;
+      
+      const element = document.querySelector(href);
+      if (!element) return;
+      
+      e.preventDefault();
+      
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
+    };
+    
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', handleSmoothScroll as EventListener);
+    });
+    
+    return () => {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.removeEventListener('click', handleSmoothScroll as EventListener);
+      });
+    };
+  }, []);
+  
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="flex flex-col min-h-screen bg-background font-poppins">
+      <Header />
+      <main>
+        <Hero />
+        <Formacao />
+        <Sobre />
+        <Experiencia />
+        <Cursos />
+        <Contato />
+      </main>
+      <Footer />
     </div>
   );
 };
